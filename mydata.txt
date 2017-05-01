@@ -1,0 +1,5 @@
+"d"	"e"	"f"
+"1"	1	"red"	TRUE
+"2"	2	"white"	TRUE
+"3"	3	"red"	TRUE
+"4"	4	NA	FALSE
