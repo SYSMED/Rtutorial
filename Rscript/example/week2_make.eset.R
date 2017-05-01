@@ -50,6 +50,7 @@ phenoData=AnnotatedDataFrame(data=pdata)
 
 #eset
 eset=ExpressionSet(as.matrix(expr), phenoData=phenoData, featureData=featureData)
+eset
 
 ################
 #preprocessing 
