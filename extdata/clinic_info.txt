@@ -1,0 +1,4 @@
+Sample_ID	ID	RNA_seq	Recurrence state	Recurrent_period_M	Survival state	Death date	Survival_period_M	Gender	Age
+Wang_038	902941	1	1	3	0		7	male	41
+Wang_039	949561	1	0	37	0		37	male	51
+Wang_040	1147818	1	1	10	0		39	male	71

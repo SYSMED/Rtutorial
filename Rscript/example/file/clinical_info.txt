@@ -1,0 +1,79 @@
+sample_id	geo_accession	type	source_name_ch1	organism	tissue	disease state	age
+HCC_1T	GSM1398645	RNA	HCC_1T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	48
+HCC_2T	GSM1398647	RNA	HCC_2T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	50
+HCC_3T	GSM1398649	RNA	HCC_3T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	60
+HCC_4T	GSM1398651	RNA	HCC_4T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	65
+HCC_5T	GSM1398653	RNA	HCC_5T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	75
+HCC_6T	GSM1398655	RNA	HCC_6T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	52
+HCC_7T	GSM1398657	RNA	HCC_7T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	47
+HCC_8T	GSM1398659	RNA	HCC_8T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	38
+HCC_9T	GSM1398661	RNA	HCC_9T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	56
+HCC_10T	GSM1398663	RNA	HCC_10T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	62
+HCC_11T	GSM1398665	RNA	HCC_11T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	49
+HCC_12T	GSM1398667	RNA	HCC_12T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	78
+HCC_13T	GSM1398669	RNA	HCC_13T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	69
+HCC_14T	GSM1398671	RNA	HCC_14T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	42
+HCC_15T	GSM1398673	RNA	HCC_15T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	55
+HCC_16T	GSM1398675	RNA	HCC_16T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	66
+HCC_17T	GSM1398677	RNA	HCC_17T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	68
+HCC_18T	GSM1398679	RNA	HCC_18T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	41
+HCC_19T	GSM1398681	RNA	HCC_19T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	43
+HCC_20T	GSM1398683	RNA	HCC_20T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	77
+HCC_21T	GSM1398685	RNA	HCC_21T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	81
+HCC_22T	GSM1398687	RNA	HCC_22T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	68
+HCC_23T	GSM1398689	RNA	HCC_23T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	43
+HCC_24T	GSM1398691	RNA	HCC_24T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	59
+HCC_25T	GSM1398692	RNA	HCC_25T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	64
+HCC_26T	GSM1398694	RNA	HCC_26T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	62
+HCC_27T	GSM1398696	RNA	HCC_27T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	89
+HCC_28T	GSM1398698	RNA	HCC_28T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	74
+HCC_29T	GSM1398700	RNA	HCC_29T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	76
+HCC_30T	GSM1398702	RNA	HCC_30T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	42
+HCC_31T	GSM1398704	RNA	HCC_31T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	53
+HCC_33T	GSM1398707	RNA	HCC_33T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	58
+HCC_35T	GSM1398710	RNA	HCC_35T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	66
+HCC_36T	GSM1398712	RNA	HCC_36T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	50
+HCC_37T	GSM1398714	RNA	HCC_37T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	47
+HCC_38T	GSM1398716	RNA	HCC_38T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	49
+HCC_39T	GSM1398718	RNA	HCC_39T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	50
+HCC_40T	GSM1398720	RNA	HCC_40T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	64
+HCC_41T	GSM1398722	RNA	HCC_41T	Homo sapiens	tissue: liver tissue	disease state: hepatocellular carcinoma tumor	78
+HCC_2N	GSM1398646	RNA	HCC_2N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	50
+HCC_3N	GSM1398648	RNA	HCC_3N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	60
+HCC_4N	GSM1398650	RNA	HCC_4N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	65
+HCC_5N	GSM1398652	RNA	HCC_5N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	75
+HCC_6N	GSM1398654	RNA	HCC_6N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	52
+HCC_7N	GSM1398656	RNA	HCC_7N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	47
+HCC_8N	GSM1398658	RNA	HCC_8N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	38
+HCC_9N	GSM1398660	RNA	HCC_9N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	56
+HCC_10N	GSM1398662	RNA	HCC_10N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	62
+HCC_11N	GSM1398664	RNA	HCC_11N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	49
+HCC_12N	GSM1398666	RNA	HCC_12N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	78
+HCC_13N	GSM1398668	RNA	HCC_13N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	69
+HCC_14N	GSM1398670	RNA	HCC_14N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	42
+HCC_15N	GSM1398672	RNA	HCC_15N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	55
+HCC_16N	GSM1398674	RNA	HCC_16N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	66
+HCC_17N	GSM1398676	RNA	HCC_17N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	68
+HCC_18N	GSM1398678	RNA	HCC_18N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	41
+HCC_19N	GSM1398680	RNA	HCC_19N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	43
+HCC_20N	GSM1398682	RNA	HCC_20N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	77
+HCC_21N	GSM1398684	RNA	HCC_21N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	81
+HCC_22N	GSM1398686	RNA	HCC_22N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	68
+HCC_23N	GSM1398688	RNA	HCC_23N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	43
+HCC_24N	GSM1398690	RNA	HCC_24N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	59
+HCC_26N	GSM1398693	RNA	HCC_26N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	62
+HCC_27N	GSM1398695	RNA	HCC_27N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	89
+HCC_28N	GSM1398697	RNA	HCC_28N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	74
+HCC_29N	GSM1398699	RNA	HCC_29N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	76
+HCC_30N	GSM1398701	RNA	HCC_30N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	42
+HCC_31N	GSM1398703	RNA	HCC_31N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	53
+HCC_32N	GSM1398705	RNA	HCC_32N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	55
+HCC_33N	GSM1398706	RNA	HCC_33N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	58
+HCC_34N	GSM1398708	RNA	HCC_34N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	60
+HCC_35N	GSM1398709	RNA	HCC_35N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	66
+HCC_36N	GSM1398711	RNA	HCC_36N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	50
+HCC_37N	GSM1398713	RNA	HCC_37N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	47
+HCC_38N	GSM1398715	RNA	HCC_38N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	49
+HCC_39N	GSM1398717	RNA	HCC_39N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	50
+HCC_40N	GSM1398719	RNA	HCC_40N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	64
+HCC_41N	GSM1398721	RNA	HCC_41N	Homo sapiens	tissue: liver tissue	disease state: adjacent non-tumorous	78
