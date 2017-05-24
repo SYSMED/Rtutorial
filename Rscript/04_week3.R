@@ -5,7 +5,7 @@ eset
 # exprs, pData, fData
 dim(exprs(eset))
 pData(eset)
-fData(eset)
+head(fData(eset))
 
 # log2
 hist(exprs(eset))
@@ -49,14 +49,15 @@ head(deg.down)
 write.csv(deg.up, file = "result/deg.up.csv")
 write.csv(deg.down, file = "result/deg.dn.csv")
 
+
+deg.sigList=list(up=as.character(deg.up$symbol), down=as.character(deg.down$symbol))
+save(fil.eset, file = "data/fil.eset.rda")
+save(deg.sigList, file = "data/deg.sigList.rda")
+
+
 # IGV
 # DAVID
 # network (GENEMENIA)
-
-
-
-
-
 
 
 # Gene Set Enrichment Analysis

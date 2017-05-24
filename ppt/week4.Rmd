@@ -1,0 +1,215 @@
+---
+title: "Rtutorial_week4"
+author: Ji-Hye Choi
+date: 2017.05.24
+output: html_notebook
+---
+
+## Today
+
+* Genomic Ranges
+* ggplot (eg. geom_bar)
+* RMarkdown
+
+
+## 1. Genomic Ranges
+
+### IRanges: Infrastructure for manipulating intervals
+```{r}
+
+```
+
+```{r IRanges, eval=F}
+library(IRanges)
+ir1 <- IRanges(start = c(1,3,5), end = c(3,5,7))
+ir1
+
+ir2 <- IRanges(start = c(1,3,5), width = 3)
+ir2
+
+names(ir1) <- paste("A", 1:3, sep = "")
+ir1
+dim(ir1)
+length(ir1)
+```
+
+### GRanges: like IRanges but with strand, chromosome (seqnames), metadata
+
+```{r GRanges, eval=F}
+library(GenomicRanges)
+gr <- GRanges(seqnames = "chr1", strand = c("+", "-", "+"), ranges = ir1)
+values(gr) <- DataFrame(score = c(0.1, 0.5, 0.3))
+gr
+```
+
++ **seqnames(), start(), end(), width(), strand(), elementMetadata()**
+
+
+
+### Practice
+
++ **ExpressionSet to GRange**
+
+```{r eset2gr, eval=F}
+load(file.path("/data/Rpackage/Rtutorial/data/fil.eset.rda"))
+head(fData(fil.eset))
+
+eset.gr=GRanges(seqnames = fData(fil.eset)$chr, strand = fData(fil.eset)$strand, ranges = IRanges(start = fData(fil.eset)$start, end = fData(fil.eset)$end, names = fData(fil.eset)$gene.name))
+values(eset.gr)=DataFrame(gene.id=fData(fil.eset)$gene.id, fc=fData(fil.eset)$fc)
+eset.gr
+```
+
++ **get sequence (Biostrings::getSeq())**
+
+```{r getseq, eval=F}
+library(Biostrings)
+library(BSgenome.Hsapiens.UCSC.hg38) # (Biostrings-based genome data)
+seq=getSeq(BSgenome.Hsapiens.UCSC.hg38, eset.gr)
+eset.gr$seq=seq
+```
+
++ **complement(), reverseComplement(), subseq(), alphabetFrequency(), letterFrequency()**
+
+
++ **get GC%**
+
+```{r GCcont, eval=F}
+GC_content <- letterFrequency(seq, letters = "CG", as.prob = T)
+eset.gr$GCcont=GC_content
+
+hist(eset.gr$GCcont, breaks=100)
+```
+
++ **promoter sequence: promoter()**
+
+```{r promoter, eval=F}
+promoter.gr=promoters(eset.gr, upstream = 1000, downstream = 0)
+args(promoters)
+eset.gr$promoter.seq=getSeq(BSgenome.Hsapiens.UCSC.hg38, promoter.gr)
+```
+
++ **write fasta : writeXStringSet()**
+
+```{r fasta, eval=F}
+writeXStringSet(eset.gr$promoter.seq, filepath = "/data/Rpackage/Rtutorial/result/promoter.seq.fasta")
+```
+
++ **RWebLogo** (conserved sequence logo viewer)
+
+```{r weblogo, eval=F}
+library(RWebLogo)
+weblogo(as.character(subseq(eset.gr$promoter.seq, 950, 1000))[1:10], errorbars=FALSE)
+```
+
+
+### **IRanges::findOverlaps()**
+
+```{r findoverlaps, eval=F}
+query <- IRanges(c(1, 4, 9), c(5, 7, 10))
+subject <- IRanges(c(2, 2, 10), c(2, 3, 12))
+query
+subject
+
+findOverlaps(query, subject)
+findOverlaps(query, subject, select="first")
+findOverlaps(query, subject, select="last")
+```
+
++ **Annotation cytoband to eset**
+
+```{r ucsc, eval=F}
+library(rtracklayer)
+session = browserSession("UCSC")
+genome(session) <- "hg38"
+names(trackNames(session))
+query=ucscTableQuery(session, track="Chromosome Band")
+tableNames(query)
+tbl=getTable(ucscTableQuery(session, track="Chromosome Band", table="cytoBand"))
+ucsc.cytoband=tbl
+save(ucsc.cytoband, file = "/data/Rpackage/Rtutorial/data/ucsc.cytoband.rda")
+```
+
+```{r cytoband, eval=F}
+load("/data/Rpackage/Rtutorial/data/ucsc.cytoband.rda")
+head(ucsc.cytoband)
+
+cytoband.gr = GRanges(seqnames = as.character(ucsc.cytoband$chrom), ranges = IRanges(start = ucsc.cytoband$chromStart, end = ucsc.cytoband$chromEnd, names = ucsc.cytoband$name))
+
+hits=findOverlaps(eset.gr, cytoband.gr, select = "first")
+fData(fil.eset)$cytoband=names(cytoband.gr[hits])
+head(fData(fil.eset))
+```
+
++ **Copy number variation**
+
+```{r cbs, eval=F}
+source("/data/Rpackage/Rtutorial/Rscript/00_function.R")
+load("/data/Rpackage/Rtutorial/data/cbsList.rda")
+class(cbsList)
+head(cbsList[[1]])
+
+cbs.grList=cbs2grList(cbsList)
+eset.gr
+# gene      ######### ############
+# seg   ~~~~~~~  ~~~   ~~~~~~~~ ~~~~~~~~
+
+cdat=sapply(cbs.grList, function(cbs.gr) {
+  hits <- findOverlaps(eset.gr, cbs.gr)
+  
+  seg.mean=tapply(cbs.gr[subjectHits(hits)]$seg.mean, queryHits(hits), mean)
+  eset.gr$seg.mean=NA
+  eset.gr$seg.mean[as.numeric(names(seg.mean))]=seg.mean
+  eset.gr$seg.mean
+})
+rownames(cdat)=names(eset.gr)
+head(cdat)
+```
+
+
+## 2. ggplot2
+
+```{r, eval=F}
+library(ggplot2)
+data(iris)
+head(iris)
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width))  + geom_point()
+ggplot(iris, aes(Sepal.Length, Sepal.Width))  + geom_point(aes(colour = Species))
+ggplot(iris, aes(Sepal.Length, Sepal.Width))  + geom_point(aes(colour = Species, size=Petal.Width))
+ggplot(iris, aes(Sepal.Length, Sepal.Width))  + geom_point(aes(colour = Species, size=Petal.Width), alpha=0.7)
+
+
+df <- data.frame(dose=c("D0.5", "D1", "D2"), len=c(4.2, 10, 29.5))
+g=ggplot(data=df, aes(x=dose, y=len)) + geom_bar(stat="identity")
+coord_flip()
+ggplot(data=df, aes(x=dose, y=len)) + geom_bar(stat="identity", width=0.5)
+ggplot(data=df, aes(x=dose, y=len)) + geom_bar(stat="identity", color="blue", fill="white")
+ggplot(data=df, aes(x=dose, y=len)) + geom_bar(stat="identity", fill="steelblue")+theme_minimal()
+
+
+g=ggplot(data=df, aes(x=dose, y=len)) + geom_bar(stat="identity", fill="steelblue")
+g+geom_text(aes(label=len), vjust=1.6, color="white", size=3.5)+ theme_minimal()
+
+
+
+ggplot(df, aes(x=dose, y=len, colour=dose)) +   geom_bar(stat="identity", fill="white")
+
+
+g=ggplot(df, aes(x=dose, y=len, colour=dose, fill=dose)) +   geom_bar(stat="identity")
+g+scale_color_manual(values=c("#999999", "#E69F00", "#56B4E9"))+scale_fill_manual(values=c("#999999", "#E69F00", "#56B4E9"))
+g+scale_color_brewer(palette="Dark2")+scale_fill_brewer(palette = "Dark2")+theme_bar()
+g+theme(legend.position="bottom")
+
+
+data(mtcars)
+ggplot(mtcars, aes(x=factor(cyl)))+ geom_bar(stat="count", width=0.7, fill="steelblue") + theme_minimal()
+
+
+df=fData(fil.eset)
+ggplot(df, aes(x=factor(chr)))+ geom_bar(stat="count", width=0.7, fill="steelblue") + theme_minimal() + theme(axis.text.x = element_text(angle = 90, size=10, face="bold"), axis.text.y = element_text(size=10, face="bold"))
+```
+
+## 3. Rarkdown
+
+
+https://www.rstudio.com/resources/cheatsheets/
